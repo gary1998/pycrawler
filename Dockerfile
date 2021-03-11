@@ -16,4 +16,8 @@ RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 RUN npm install
 
+ENV PORT=${PORT}
+
+EXPOSE ${PORT}
+
 CMD ["node", "./server.js"]
