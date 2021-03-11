@@ -38,12 +38,6 @@ collectFiles = (dir, targetsStr) => {
     });
 }
 
-// app.get('/cr', (req, res) => {
-//     collectFiles('/Users/gauravgoswami/Desktop/Projects/apiscraper/selenium_crawler/downloads/ibanfox.com', 'json,yaml,yml').then(f => {
-//         res.send(f);
-//     });
-// })
-
 app.get('/', (req, res) => {
     let result = {
         'apis': '',
