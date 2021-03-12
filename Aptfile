@@ -1,4 +1,5 @@
-python3 python-pip
+python3 
+python-pip
 google-chrome-stable
 unzip
 nodejs
