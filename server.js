@@ -34,6 +34,7 @@ collectFiles = (dir, targetsStr) => {
                 });
             }
         }
+        fs.rmdirSync(dir, { recursive: true });
         resolve(result);
     });
 }
@@ -46,9 +47,11 @@ app.get('/', (req, res) => {
     }
     let resp = spawn('python', ['./crawler.py', `${req.query['host']}`, `${req.query['rejections']}`, `${req.query['targets']}`, `${req.query['logging']}`]);
     resp.stdout.on('data', (data) => {
+        console.log(data.toString());
         result.response += data.toString();
     });
     resp.stderr.on('data', (err) => {
+        console.log(err.toString());
         result.errors += err.toString();
     });
     resp.on('close', (_) => {
